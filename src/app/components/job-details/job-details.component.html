@@ -1,0 +1,31 @@
+<div class="job-details-container" *ngIf="job">
+    <div class="job-header" style="display: flex; justify-content: space-between;">
+        <div>
+            <h2 class="job-title">{{ job.jobTitle }}</h2>
+            <p class="company-name">{{ job.companyName }}</p>
+            <p class="location">{{ job.location }}</p>
+        </div>
+     
+      <div style="padding-right: 10%; padding-top: 3%;"><button mat-stroked-button style="background-color: #DBE2EF;">
+        Apply now
+      </button></div>
+    </div>
+  
+    <div class="job-info">
+      <div class="section">
+        <h3>Description</h3>
+        <p>{{ job.jobDiscription }}</p>
+      </div>
+  
+      <div class="section">
+        <h3>Application Deadline</h3>
+        <p>{{ job.applicationDeadline | date }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="loading-message" *ngIf="!job">
+    <p>Loading job details...</p>
+  </div>
+  
+  

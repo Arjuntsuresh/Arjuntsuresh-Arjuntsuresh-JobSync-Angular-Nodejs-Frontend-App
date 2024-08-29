@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <span>
+    <img
+      src="assets/logo/jobsync-high-resolution-logo-transparent.svg"
+      alt="logo"
+      style="height: 40px"
+    />
+  </span>
+  <button mat-button routerLink="/" routerLinkActive="active-link">
+    Home
+  </button>
+  <span class="spacer"></span>
+  <div class="right-options">
+    <button
+      mat-button
+      routerLink="/signin"
+      routerLinkActive="active-link"
+      style="color: #3f72af"
+    >
+      Sign in
+    </button>
+    |
+    <button mat-button routerLink="/employers" routerLinkActive="active-link">
+      Employers/Post Job
+    </button>
+    <button mat-button (click)="logout()" [hidden]="!hide">Logout</button>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+<div class="spacer1"></div>
+<app-footers></app-footers>

@@ -1,0 +1,31 @@
+.spacer {
+  flex: 1;
+}
+
+.right-options {
+  display: flex;
+  align-items: center;
+}
+
+.right-options button {
+  margin-left: 16px;
+}
+
+/* Optional: Align the Home button with the logo */
+mat-toolbar button {
+  margin-left: 15px; /* Adjust as necessary */
+}
+
+img {
+  height: 160px;
+  width: 160px;
+}
+mat-toolbar {
+  background-color: #f9f7f7;
+  color: black;
+}
+.spacer1{
+    padding-top: 20%;
+}
+
+

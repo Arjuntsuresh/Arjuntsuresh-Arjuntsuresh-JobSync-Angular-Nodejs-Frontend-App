@@ -1,0 +1,55 @@
+/* Container for centering */
+.form-container {
+    width: 100%; /* Adjust the width of the container */
+    max-width: 700px; /* Optional: Set a maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding if needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a box effect */
+    border-radius: 8px; /* Optional: Rounded corners for the container */
+    background-color: #DBE2EF; /* Optional: Background color for the container */
+    margin-top: 5%;
+  }
+  
+  /* Table styles */
+  .example-full-width {
+    width: 100%; /* Full width of the container */
+  }
+  
+  /* Form field styles */
+  .full-width-form-field {
+    width: 100%;
+  }
+  
+  .full-width-form-field mat-form-field {
+    width: 100%; /* Ensure mat-form-field stretches to full width of cell */
+  }
+  
+ 
+  
+  /* Button styles */
+  .full-width-button {
+    width: 100%; /* Make the button stretch to full width of its cell */
+    height: 56px; /* Match the height of Angular Material inputs */
+    box-sizing: border-box; /* Include padding and border in the height */
+    display: flex; /* Use flex to center the button content */
+    align-items: center; /* Center button content vertically */
+    justify-content: center; /* Center button content horizontally */
+    margin-bottom: 20px;
+  }
+  
+  .job-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .job-item h3 {
+    margin-top: 0;
+  }
+  
+  .job-item p {
+    margin: 5px 0;
+  }
+  
