@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-job-details',
@@ -10,7 +10,8 @@ export class JobDetailsComponent implements OnInit {
 
   job: any;
   constructor(private route: ActivatedRoute,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private router: Router,
   ){}
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -18,13 +19,11 @@ export class JobDetailsComponent implements OnInit {
       if (id) {
         this.usersService.getJobById(id).subscribe(job => {
           this.job = job;
-          console.log(job);
-          
         });
       }
     });
   }
   apply(){
-
+    this.router.navigate(['/job-application'], { queryParams: { id: this.job._id } });
   }
   }

@@ -10,12 +10,15 @@ import { MaterialModule } from './material.module';
 import { FootersComponent } from './components/footers/footers.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { JobApplicationComponent } from './components/job-application/job-application.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     JobDetailsComponent,
     HomeComponent,
-    FootersComponent
+    FootersComponent,
+    JobApplicationComponent
   ],
   imports: [
     BrowserModule,
