@@ -11,6 +11,10 @@ import { FootersComponent } from './components/footers/footers.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { JobApplicationComponent } from './components/job-application/job-application.component';
+import { SuccessPageComponent } from './components/success-page/success-page.component';
+import { EmployerApplyPageComponent } from './components/employer-apply-page/employer-apply-page.component';
+import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
+import { SignInPageComponent } from './components/sign-in-page/sign-in-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { JobApplicationComponent } from './components/job-application/job-applic
     JobDetailsComponent,
     HomeComponent,
     FootersComponent,
-    JobApplicationComponent
+    JobApplicationComponent,
+    SuccessPageComponent,
+    EmployerApplyPageComponent,
+    SignUpPageComponent,
+    SignInPageComponent
   ],
   imports: [
     BrowserModule,

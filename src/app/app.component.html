@@ -13,14 +13,14 @@
   <div class="right-options">
     <button
       mat-button
-      routerLink="/signin"
+      [routerLink]="['/signin']"
       routerLinkActive="active-link"
       style="color: #3f72af"
     >
       Sign in
     </button>
     |
-    <button mat-button routerLink="/employers" routerLinkActive="active-link">
+    <button mat-button [routerLink]="['/employer-apply']" routerLinkActive="active-link">
       Employers/Post Job
     </button>
     <button mat-button (click)="logout()" [hidden]="!hide">Logout</button>
@@ -28,5 +28,5 @@
 </mat-toolbar>
 
 <router-outlet></router-outlet>
-<div class="spacer1"></div>
+<!-- <div class="spacer1"></div> -->
 <app-footers></app-footers>

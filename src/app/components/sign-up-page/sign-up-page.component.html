@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Source Codes By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <div class="login_form">
+    <!-- Login form container -->
+    <form [formGroup]="signUpForm" (ngSubmit)="submitSearch()">
+      <h3>Sign up with</h3>
+
+      <div class="login_option">
+        <!-- Google button -->
+        <div class="option">
+          <a href="#">
+            <img [src]="google" alt="Google" />
+            <span>Google</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Login option separator -->
+      <p class="separator">
+        <span>or</span>
+      </p>
+      <div class="input_box">
+        <label for="email">User name</label>
+        <input type="text"  formControlName="userName" placeholder="Enter your name" required />
+      </div>
+
+      <!-- Email input box -->
+      <div class="input_box">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter email address" required />
+      </div>
+      <div class="input_box">
+        <label for="email">Mobile</label>
+        <input type="number" id="number" formControlName="mobile" placeholder="Enter Mobile number" required />
+      </div>
+      <!-- Paswwrod input box -->
+      <div class="input_box">
+        <div class="password_title">
+          <label for="password">Password</label>
+          <!-- <a href="#">Forgot Password?</a> -->
+        </div>
+
+        <input type="password" id="password" formControlName="password" placeholder="Enter your password" required />
+      </div>
+
+       <!-- Login button -->
+      <button type="submit">Register</button>
+
+      <p class="sign_up">Don't have an account? <a [routerLink]="['/signin']">Sign in</a></p>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Source Codes By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form in HTML and CSS | CodingNepal</title>
+</head>
+<body>
+  <div class="login_form">
+    <!-- Login form container -->
+    <form [formGroup]="signInForm" (ngSubmit)="submitSearch()">
+      <h3>Log in with</h3>
+
+      <div class="login_option">
+        <!-- Google button -->
+        <div class="option">
+          <div id="g_id_onload"
+          data-client_id="332825730626-6utoq404bkf2ljspri181srlj5i7l708.apps.googleusercontent.com"
+          data-context="signin"
+          data-ux_mode="popup"
+          data-login_uri="http://localhost:3000/login"
+          data-auto_select="true"
+          data-itp_support="true">
+     </div>
+     
+     <div class="g_id_signin"
+          data-type="standard"
+          data-shape="rectangular"
+          data-theme="filled_black"
+          data-text="signin_with"
+          data-size="large"
+          data-logo_alignment="left">
+     </div>
+        </div>
+      </div>
+
+      <!-- Login option separator -->
+      <p class="separator">
+        <span>or</span>
+      </p>
+
+      <!-- Email input box -->
+      <div class="input_box">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email"  placeholder="Enter email address" required />
+      </div>
+
+      <!-- Paswwrod input box -->
+      <div class="input_box">
+        <div class="password_title">
+          <label for="password">Password</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <input type="password" id="password" formControlName="password" placeholder="Enter your password" required />
+      </div>
+
+       <!-- Login button -->
+      <button type="submit">Log In</button>
+
+      <p class="sign_up">Don't have an account? <a [routerLink]="['/signup']">Sign up</a></p>
+    </form>
+  </div>
+</body>
+</html>

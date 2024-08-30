@@ -17,3 +17,22 @@ export interface applicationDetails{
     coverLetter:string;
     resume:File;                        
 }
+export interface jobData{
+    jobTitle:string;
+    companyName:string;
+    location:string;
+    jobDescription:string;
+    applicationDeadline:string;
+}
+
+export interface signupDetails{
+    email:string;
+    password:string;
+    mobile:string;
+    userName:string;
+}
+
+export interface loginDetails{
+    email:string;
+    password:string;
+}
