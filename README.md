@@ -1,4 +1,4 @@
-# JobSync-Angular-Nodejs-Backend-App
+# JobSync-Angular-Nodejs-Frontend-App
 
 A platform for job seekers to browse listings and submit applications, while employers can post job openings. Built with Angular (frontend) and Node.js/Express (backend), it features Google OAuth for authentication, JWT for securing APIs, and Multer for resume uploads. The backend is hosted on Render, and the frontend is hosted on Netlify.
 ## 🚀 [Live Demo](#)
@@ -52,28 +52,27 @@ To run the application locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Arjuntsuresh/Arjuntsuresh-Arjuntsuresh-JobSync-Angular-Nodejs-Backend-App.git
+   git clone https://github.com/Arjuntsuresh/Arjuntsuresh-Arjuntsuresh-JobSync-Angular-Nodejs-Frontend-App.git
    
 2. Navigate to the project directory:
    ```bash
-   cd your-repository
-   
+   cd ../frontend
+
 3. Install the dependencies:
    ```bash
    npm install
 
 4. Configure environment variables:
-   Create a .env file in the root directory and add the necessary configuration:
+   Update the API base URL in the Angular environment configuration
     ```bash
-    PORT=your_port
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET_KEY=your_jwt_secret_key
-    TOKEN_HEADER_KEY=your_token_header_key
-    CLIENT_ID=Your_client_id
+    export const environment = {
+   production: false,
+   BaseURL: 'https://jobsync-app-827t.onrender.com'
+   };
     
-5. Start the application:
+5. Run the Angular development server:
    ```bash
-   npm start
+   ng serve
 
 ## 🤝 Contributing
 
