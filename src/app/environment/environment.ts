@@ -1,1 +1,1 @@
-export const baseUrl:string='http://localhost:3000';
+export const baseUrl: string = 'https://jobsync-app-827t.onrender.com';

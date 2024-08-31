@@ -16,6 +16,8 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./job-application.component.css'],
 })
 export class JobApplicationComponent implements OnInit {
+  fileToUpload: File | null = null;
+  job: any;
   constructor(
     private route: ActivatedRoute,
     private usersService: UsersService,
@@ -23,8 +25,6 @@ export class JobApplicationComponent implements OnInit {
     private snackBar: MatSnackBar,
     private router: Router
   ) {}
-  job: any;
-
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       const id = params['id'];
@@ -46,11 +46,8 @@ export class JobApplicationComponent implements OnInit {
     phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
     email: ['', [Validators.required, Validators.email]],
     coverLetter: ['', Validators.required],
-    jobId: ['', Validators.required],
+    jobId: ['', Validators.required]
   });
-
-  fileToUpload: File | null = null;
-
   onFileChange(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -62,7 +59,6 @@ export class JobApplicationComponent implements OnInit {
       this.showErrors();
     } else {
       const formData = new FormData();
-
       // Append form fields to FormData with type checks
       formData.append('jobId', this.job._id ?? ''); // Use an empty string if undefined
       formData.append(
@@ -96,10 +92,8 @@ export class JobApplicationComponent implements OnInit {
       } else {
         console.error('No file selected');
       }
-
       this.usersService.applyForJob(formData).subscribe({
         next: () => {
-          console.log('Application submitted successfully');
           this.snackBar.open('Success', 'Close', {
             duration: 3000,
             verticalPosition: 'top',
@@ -109,8 +103,6 @@ export class JobApplicationComponent implements OnInit {
           this.router.navigate(['/success']);
         },
         error: (e) => {
-          console.log(e);
-
           this.snackBar.open('Failed to apply for job', 'Close', {
             duration: 3000,
             verticalPosition: 'top',
@@ -120,7 +112,7 @@ export class JobApplicationComponent implements OnInit {
       });
     }
   }
-
+//SnackBar error message.
   showErrors() {
     const controlOrder = [
       'fullName',
@@ -133,6 +125,7 @@ export class JobApplicationComponent implements OnInit {
       'phoneNumber',
       'email',
       'resume',
+      'coverLetter'
     ]; // Order of controls
     const controlLabels: { [key: string]: string } = {
       fullName: 'Full Name',
@@ -145,11 +138,10 @@ export class JobApplicationComponent implements OnInit {
       phoneNumber: 'Phone Number',
       email: 'Email',
       resume: 'Resume',
+      coverLetter: 'Cover Letter'
     };
-
     for (const name of controlOrder) {
       const control = this.submitForm.get(name);
-
       if (control && control.invalid) {
         const label = controlLabels[name] || name; // Use label or fallback to the control name
 
@@ -188,7 +180,6 @@ export class JobApplicationComponent implements OnInit {
             horizontalPosition: 'right',
           });
         }
-
         break; // Stop after showing the first error
       }
     }

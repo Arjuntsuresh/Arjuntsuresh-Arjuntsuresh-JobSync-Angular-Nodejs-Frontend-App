@@ -25,10 +25,10 @@
     </table>
   </form>
 </div>
-<div style="height: 45%;"></div>
 <!--Search result-->
-<div  class="form-container" *ngIf="searchResults.length > 0" style="margin-top: 30px;">
-  <div *ngFor="let job of searchResults" class="job-item" style="display: flex; flex-direction: row; align-items:center; justify-content: space-between;">
+<div class="form-container" *ngIf="searchResults.length > 0" style="margin-top: 30px;">
+  <div *ngFor="let job of searchResults" class="job-item"
+    style="display: flex; flex-direction: row; align-items:center; justify-content: space-between;">
     <div>
       <h3>{{ job.jobTitle }}</h3>
       <p><strong>Company:</strong> {{ job.companyName }}</p>
@@ -37,13 +37,11 @@
       <button mat-stroked-button (click)="viewDetails(job)" style="background-color: #DBE2EF;">
         View Details
       </button>
-      
     </div>
-   
   </div>
 </div>
-
 <!-- Show message if no results found -->
 <div *ngIf="searchResults.length === 0 && !searchForm.invalid && submitted">
   <p>No jobs found.</p>
 </div>
+<!-- <div style="height: 45%;"></div> -->

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,6 @@
                     </select>
                 </div>
             </fieldset>
-
             <fieldset>
                 <legend>Personal Data</legend>
                 <div class="form-row">
@@ -70,37 +70,32 @@
                     <textarea formControlName="coverLetter" class="form-control" id="cover-letter"></textarea>
                 </div>
             </fieldset>
-
             <fieldset>
                 <legend>Application Documents</legend>
                 <input type="hidden" name="MAX_FILE_SIZE" value="10485760">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="resume">Resume</label>
-                        <input type="file" (change)="onFileChange($event)"    accept=".doc,.docx,.pdf" />
-
-
-                    </div>  
+                        <input type="file" (change)="onFileChange($event)" accept=".doc,.docx,.pdf" />
+                    </div>
                 </div>
                 <p>Possible file types: DOC, PDF. Maximum file size: 10 MB.</p>
             </fieldset>
-
             <fieldset>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input"  id="data-processing" required>
+                    <input type="checkbox" class="form-check-input" id="data-processing" required>
                     <label class="form-check-label" for="data-processing">
-                        I agree to the processing of my data for the handling of my request by <a href="https://form.taxi/en" target="_blank">Form.taxi</a>. *
+                        I agree to the processing of my data for the handling of my request by <a
+                            href="https://form.taxi/en" target="_blank">Form.taxi</a>. *
                     </label>
                 </div>
             </fieldset>
-
             <div class="btns">
                 <input type="text" name="_gotcha" value="" style="display:none;">
                 <input type="submit" class="btn btn-primary" value="Submit application">
             </div>
         </form>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

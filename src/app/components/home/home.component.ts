@@ -13,54 +13,49 @@ export class HomeComponent implements OnInit {
   searchResults: any[] = [];
   submitted: boolean = false;
   searchForm: FormGroup = this.builder.group({
-    // Direct initialization
     jobTitle: ['', Validators.required],
     city: ['', Validators.required],
   });
 
   constructor(
-    private builder: FormBuilder, 
+    private builder: FormBuilder,
     private snackBar: MatSnackBar,
     private userService: UsersService,
-    private router: Router  // Injecting Router to navigate to another component
+    private router: Router
   ) {}
 
   ngOnInit() {}
-
-
+//Submit the search results.
   submitSearch() {
     this.submitted = true;
     if (this.searchForm.invalid) {
       this.showErrors();
-    } else{
+    } else {
       const jobData: jobSearch = {
         jobTitle: this.searchForm.get('jobTitle')?.value,
         location: this.searchForm.get('city')?.value,
       };
       this.userService.findJob(jobData).subscribe({
         next: (response) => {
-        this.searchResults=response;
-         
+          this.searchResults = response;
         },
         error: () => {
-          this.snackBar.open("Job not found", 'Close', {
+          this.snackBar.open('Job not found', 'Close', {
             duration: 3000,
             verticalPosition: 'top',
-            horizontalPosition: 'right'
+            horizontalPosition: 'right',
           });
-        }
+        },
       });
-      
     }
   }
-
+//Showing the snackbar error message.
   showErrors() {
     const controlOrder = ['jobTitle', 'city']; // Order of controls
     const controlLabels: { [key: string]: string } = {
       jobTitle: 'Job title',
       city: 'City',
     };
-
     for (const name of controlOrder) {
       const control = this.searchForm.get(name);
 
@@ -77,7 +72,7 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-
+//Navigation to the job details page.
   viewDetails(job: any) {
     this.router.navigate(['/details'], { queryParams: { id: job._id } });
   }

@@ -1,38 +1,38 @@
 /* Custom Footer Styles */
 .bg-inf-blue {
-    background-color: #0a4275; /* Adjust the background color as needed */
+  background-color: #0a4275; /* Adjust the background color as needed */
 }
 
 footer {
-    color: #ffffff; /* White text color */
+  color: #ffffff; /* White text color */
 }
 
 footer h6 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 footer ul {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 
 footer ul li {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 footer img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 footer .text-white {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 footer .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 footer .font-weight-bold {
-    font-weight: 700;
+  font-weight: 700;
 }

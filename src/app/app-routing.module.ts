@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { JobApplicationComponent } from './components/job-application/job-application.component';
 import { SuccessPageComponent } from './components/success-page/success-page.component';
@@ -10,16 +9,16 @@ import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.comp
 import { SignInPageComponent } from './components/sign-in-page/sign-in-page.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'details',component:JobDetailsComponent},
-  {path:'job-application',component:JobApplicationComponent},
-  {path:'success',component:SuccessPageComponent},
-  {path:'employer-apply',component:EmployerApplyPageComponent},
-  {path:'signup',component:SignUpPageComponent},
-  {path:'signin',component:SignInPageComponent}
+  { path: '', component: HomeComponent },
+  { path: 'details', component: JobDetailsComponent },
+  { path: 'job-application', component: JobApplicationComponent },
+  { path: 'success', component: SuccessPageComponent },
+  { path: 'employer-apply', component: EmployerApplyPageComponent },
+  { path: 'signup', component: SignUpPageComponent },
+  { path: 'signin', component: SignInPageComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

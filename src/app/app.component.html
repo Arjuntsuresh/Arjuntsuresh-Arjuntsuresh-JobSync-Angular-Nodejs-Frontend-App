@@ -1,22 +1,13 @@
 <mat-toolbar>
   <span>
-    <img
-      src="assets/logo/jobsync-high-resolution-logo-transparent.svg"
-      alt="logo"
-      style="height: 40px"
-    />
+    <img src="assets/logo/jobsync-high-resolution-logo-transparent.svg" alt="logo" style="height: 40px" />
   </span>
   <button mat-button routerLink="/" routerLinkActive="active-link">
     Home
   </button>
   <span class="spacer"></span>
   <div class="right-options">
-    <button
-      mat-button
-      [routerLink]="['/signin']"
-      routerLinkActive="active-link"
-      style="color: #3f72af"
-    >
+    <button mat-button [routerLink]="['/signin']" routerLinkActive="active-link" style="color: #3f72af">
       Sign in
     </button>
     |
@@ -28,5 +19,5 @@
 </mat-toolbar>
 
 <router-outlet></router-outlet>
-<!-- <div class="spacer1"></div> -->
+<div class="spacer1"></div>
 <app-footers></app-footers>

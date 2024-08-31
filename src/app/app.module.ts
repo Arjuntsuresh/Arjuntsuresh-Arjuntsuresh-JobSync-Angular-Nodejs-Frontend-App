@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FootersComponent } from './components/footers/footers.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { JobApplicationComponent } from './components/job-application/job-application.component';
 import { SuccessPageComponent } from './components/success-page/success-page.component';
@@ -26,7 +26,7 @@ import { SignInPageComponent } from './components/sign-in-page/sign-in-page.comp
     SuccessPageComponent,
     EmployerApplyPageComponent,
     SignUpPageComponent,
-    SignInPageComponent
+    SignInPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +35,9 @@ import { SignInPageComponent } from './components/sign-in-page/sign-in-page.comp
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -6,32 +6,33 @@ import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-employer-apply-page',
   templateUrl: './employer-apply-page.component.html',
-  styleUrls: ['./employer-apply-page.component.css']
+  styleUrls: ['./employer-apply-page.component.css'],
 })
 export class EmployerApplyPageComponent {
-
-  constructor( private builder: FormBuilder,
-   private snackBar: MatSnackBar,
-   private userService: UsersService
-  ){}
-
-  submitForm=this.builder.group({
-    jobTitle:['',Validators.required],
-    companyName:['',Validators.required],
-    location:['',Validators.required],
-    applicationDeadline:['',Validators.required],
-    jobDescription:['',Validators.required]
-  })
-
-  submitApplication(){
-    if(this.submitForm.invalid){
+  constructor(
+    private builder: FormBuilder,
+    private snackBar: MatSnackBar,
+    private userService: UsersService
+  ) {}
+  
+  submitForm = this.builder.group({
+    jobTitle: ['', Validators.required],
+    companyName: ['', Validators.required],
+    location: ['', Validators.required],
+    applicationDeadline: ['', Validators.required],
+    jobDescription: ['', Validators.required],
+  });
+//Submit form.
+  submitApplication() {
+    if (this.submitForm.invalid) {
       this.showErrors();
-    }else{
+    } else {
       const jobDataEmployer: jobData = {
         jobTitle: this.submitForm.get('jobTitle')?.value || '',
         location: this.submitForm.get('location')?.value || '',
         jobDescription: this.submitForm.get('jobDescription')?.value || '',
-        applicationDeadline: this.submitForm.get('applicationDeadline')?.value || '',
+        applicationDeadline:
+          this.submitForm.get('applicationDeadline')?.value || '',
         companyName: this.submitForm.get('companyName')?.value || '',
       };
       this.userService.employerJobApply(jobDataEmployer).subscribe({
@@ -49,29 +50,28 @@ export class EmployerApplyPageComponent {
             verticalPosition: 'top',
             horizontalPosition: 'right', // Snackbar position
           });
-        }
-      })
-      
+        },
+      });
     }
   }
-
-
-
-
-
-  showErrors(){
-    const controlOrder = ['jobTitle', 'companyName','location','applicationDeadline','jobDescription']; // Order of controls
+//Showing snackbar error message.
+  showErrors() {
+    const controlOrder = [
+      'jobTitle',
+      'companyName',
+      'location',
+      'applicationDeadline',
+      'jobDescription',
+    ]; // Order of controls
     const controlLabels: { [key: string]: string } = {
       jobTitle: 'Job title',
-      companyName:'Company name',
+      companyName: 'Company name',
       location: 'Location',
       applicationDeadline: 'Application deadline',
       jobDescription: 'Job description',
     };
-
     for (const name of controlOrder) {
       const control = this.submitForm.get(name);
-
       if (control && control.invalid) {
         if (control.errors?.['required']) {
           const label = controlLabels[name] || name; // Use label or fallback to the control name
