@@ -2,31 +2,108 @@ body {
   text-align: center;
   padding: 40px 0;
   background: #ebf0f5;
+  margin: 0; /* Ensure no extra margin */
 }
+
 h1 {
   color: #88b04b;
   font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
   font-weight: 900;
-  font-size: 40px;
+  font-size: 4vw; /* Responsive font size */
   margin-bottom: 10px;
 }
+
 p {
   color: #404f5e;
   font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-  font-size: 20px;
+  font-size: 2vw; /* Responsive font size */
   margin: 0;
 }
-i {
-  color: #9abc66;
-  font-size: 100px;
-  line-height: 200px;
-  margin-left: -15px;
+
+.icon-container {
+  border-radius: 50%;
+  height: 20vw; /* Responsive size */
+  width: 20vw; /* Responsive size */
+  background: #F8FAF5;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.checkmark {
+  color: #9abc66;
+  font-size: 10vw; /* Responsive size */
+  line-height: 1;
+}
+
 .card {
   background: white;
-  padding: 60px;
-  border-radius: 4px;
+  padding: 5vw; /* Responsive padding */
+  border-radius: 8px; /* Slightly rounded corners */
   box-shadow: 0 2px 3px #c8d0d8;
   display: inline-block;
   margin: 0 auto;
+  max-width: 90vw; /* Ensure card doesn't exceed viewport width */
+}
+
+.return-button {
+  background-color: #DBE2EF;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.return-button a {
+  text-decoration: none;
+  color: #404f5e;
+}
+
+/* Media Queries for additional responsiveness */
+@media (max-width: 768px) {
+  .icon-container {
+    height: 25vw;
+    width: 25vw;
+  }
+
+  .checkmark {
+    font-size: 12vw;
+  }
+
+  .card {
+    padding: 6vw;
+  }
+
+  h1 {
+    font-size: 5vw;
+  }
+
+  p {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-container {
+    height: 30vw;
+    width: 30vw;
+  }
+
+  .checkmark {
+    font-size: 15vw;
+  }
+
+  .card {
+    padding: 8vw;
+  }
+
+  h1 {
+    font-size: 6vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
 }

@@ -6,15 +6,17 @@
   min-height: 100vh;
   padding: 20px;
 }
+
 /* Styling for the form box */
 form {
   background-color: #DBE2EF;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow for a subtle lift */
   width: 100%;
   max-width: 700px; /* Adequate width for the form */
 }
+
 /* Legend styling */
 legend {
   font-size: 1.8em;
@@ -23,6 +25,7 @@ legend {
   text-align: center;
   color: #333333; /* Darker color for the legend */
 }
+
 /* Styling for form groups and labels */
 .form-group label {
   font-size: 1em;
@@ -30,6 +33,7 @@ legend {
   color: #555555; /* Slightly darker label text */
   margin-bottom: 8px;
 }
+
 /* Styling for input fields and text areas */
 .form-control {
   border-radius: 6px;
@@ -39,16 +43,19 @@ legend {
   color: #333333;
   background-color: #f8f9fa; /* Light background inside inputs */
 }
+
 /* Textarea specific styling */
 textarea.form-control {
   resize: vertical; /* Allow vertical resizing */
 }
+
 /* Submit button styling */
 .btns {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
 input[type="submit"] {
   background-color: #3f72af;
   color: white;
@@ -59,18 +66,73 @@ input[type="submit"] {
   font-size: 1.1em;
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
+
 input[type="submit"]:hover {
   background-color: #0056b3;
   transform: translateY(-2px); /* Slight lift effect on hover */
 }
+
 /* Focused input fields */
 .form-control:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle blue shadow for focus */
   outline: none;
 }
-/* Snackbar styling */
-.snackbar-success {
-  background-color: #4caf50; /* Green background */
-  color: #fff; /* White text */
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  /* Medium devices (tablets) */
+  form {
+    padding: 20px; /* Reduced padding for medium devices */
+  }
+
+  .form-group label {
+    font-size: 0.9em; /* Slightly smaller font size */
+  }
+
+  .form-control {
+    font-size: 0.9em; /* Slightly smaller font size */
+  }
+
+  input[type="submit"] {
+    font-size: 1em; /* Slightly smaller font size */
+    padding: 10px 24px; /* Reduced padding */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Small devices (phones) */
+  .container-fluid {
+    padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  form {
+    padding: 15px; /* Reduced padding */
+    max-width: 100%; /* Full width on small screens */
+  }
+
+  .form-group label {
+    font-size: 0.85em; /* Smaller font size */
+  }
+
+  .form-control {
+    font-size: 0.85em; /* Smaller font size */
+  }
+
+  input[type="submit"] {
+    font-size: 0.9em; /* Smaller font size */
+    padding: 8px 20px; /* Reduced padding */
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small devices (phones in portrait mode) */
+  .form-group {
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  input[type="submit"] {
+    font-size: 0.9em; /* Consistent font size */
+    padding: 10px 16px; /* Adjusted padding */
+  }
 }

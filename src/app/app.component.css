@@ -1,29 +1,33 @@
-.spacer {
-  flex: 1;
+/* Optional: Custom styles for the navbar */
+.navbar-brand img {
+  height: 40px; /* Adjust logo size */
 }
 
-.right-options {
-  display: flex;
-  align-items: center;
-}
-
-.right-options button {
-  margin-left: 16px;
-}
-
-/* Optional: Align the Home button with the logo */
-mat-toolbar button {
-  margin-left: 15px; /* Adjust as necessary */
-}
-
-img {
-  height: 160px;
-  width: 160px;
-}
-mat-toolbar {
-  background-color: #f9f7f7;
+.navbar-light .navbar-nav .nav-link {
   color: black;
 }
-.spacer1 {
-  padding-top: 20%;
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #3f72af; /* Custom active and hover color */
+}
+
+/* Adjust dropdown on small screens */
+.dropdown-menu {
+  background-color: #f9f7f7; /* Match the background */
+}
+
+/* Ensure navbar items stack properly on small screens */
+.navbar-nav .dropdown-item {
+  text-align: center;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the container takes up at least the full height of the viewport */
+}
+
+.spacer {
+  flex-grow: 1; /* Fills the available space */
 }

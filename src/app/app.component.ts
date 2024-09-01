@@ -12,4 +12,8 @@ export class AppComponent {
   logout(){
 
   }
+  menuOpen = false;
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }

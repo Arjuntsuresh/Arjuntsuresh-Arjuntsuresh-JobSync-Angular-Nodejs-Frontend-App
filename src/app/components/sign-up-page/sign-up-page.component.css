@@ -14,36 +14,33 @@ body {
   min-height: 100vh;
   padding: 0 10px;
   display: flex;
-  margin-top: 10%;
   justify-content: center;
   align-items: center;
+  margin: 0; /* Removed margin-top to center vertically */
 }
 
 /* Login form styling */
 .login_form {
   width: 100%;
   max-width: 435px;
-  background: #fff;
+  background-color: #DBE2EF;
   border-radius: 6px;
   padding: 41px 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Form heading styling */
 .login_form h3 {
   font-size: 20px;
   text-align: center;
+  margin-bottom: 20px; /* Space below the heading */
 }
 
-/* Google & Apple button styling */
-
+/* Google button styling */
 .login_form .login_option {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.login_form .login_option .option {
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 15px; /* Space between buttons */
   width: 100%;
 }
 
@@ -56,7 +53,7 @@ body {
   background: #f8f8fb;
   border: 1px solid #dadaf2;
   border-radius: 5px;
-  margin: 34px 0 24px 0;
+  margin-bottom: 24px;
   text-decoration: none;
   color: #171645;
   font-weight: 500;
@@ -79,7 +76,7 @@ body {
 
 .login_form .separator {
   position: relative;
-  margin-bottom: 24px;
+  margin: 24px 0; /* Space above and below the separator */
 }
 
 /* Login option separator styling */
@@ -101,6 +98,11 @@ body {
   display: block;
 }
 
+/* Input field styling */
+form .input_box {
+  margin-bottom: 25px; /* Space below input fields */
+}
+
 form .input_box label {
   display: block;
   font-weight: 500;
@@ -116,8 +118,7 @@ form .input_box input {
   outline: none;
   background: #f8f8fb;
   font-size: 17px;
-  padding: 0px 20px;
-  margin-bottom: 25px;
+  padding: 0 20px;
   transition: 0.2s ease;
 }
 
@@ -128,13 +129,14 @@ form .input_box input:focus {
 form .input_box .password_title {
   display: flex;
   justify-content: space-between;
-  text-align: center;
+  align-items: center;
 }
 
 form .input_box {
   position: relative;
 }
 
+/* Link styling */
 a {
   text-decoration: none;
   color: #626cd6;
@@ -145,7 +147,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Login button styling */
+/* Register button styling */
 form button {
   width: 100%;
   height: 56px;
@@ -164,4 +166,35 @@ form button {
 
 form button:hover {
   background: #4954d0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .login_form {
+    padding: 20px; /* Reduced padding for smaller screens */
+    margin-top: 15px; /* Adjust margin for better fit */
+  }
+
+  .login_form h3 {
+    font-size: 18px; /* Slightly smaller font size */
+    margin-bottom: 15px; /* Reduced margin-bottom */
+  }
+
+  .login_form .login_option {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Reduced gap between buttons */
+  }
+
+  .login_form .separator {
+    margin: 20px 0; /* Adjust spacing */
+  }
+
+  form .input_box input {
+    font-size: 16px; /* Slightly smaller font size */
+  }
+
+  form button {
+    font-size: 16px; /* Smaller font size */
+    height: 50px; /* Slightly smaller height */
+  }
 }

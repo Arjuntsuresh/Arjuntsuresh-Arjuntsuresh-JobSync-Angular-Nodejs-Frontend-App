@@ -1,40 +1,54 @@
 /* Container for centering */
 .form-container {
-  width: 100%; /* Adjust the width of the container */
-  max-width: 700px; /* Optional: Set a maximum width */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Add padding if needed */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a box effect */
-  border-radius: 8px; /* Optional: Rounded corners for the container */
-  background-color: #dbe2ef; /* Optional: Background color for the container */
-  margin-top: 5%;
+  background-color: #DBE2EF;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px; /* Adjust spacing from navbar */
+  max-width: 800px; /* Set a maximum width for the container */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
 }
 
-/* Table styles */
-.example-full-width {
-  width: 100%; /* Full width of the container */
-}
-
-/* Form field styles */
+/* Ensure that form fields and button take up the full width of their container */
 .full-width-form-field {
   width: 100%;
 }
 
 .full-width-form-field mat-form-field {
-  width: 100%; /* Ensure mat-form-field stretches to full width of cell */
+  width: 100%;
 }
 
 /* Button styles */
 .full-width-button {
-  width: 100%; /* Make the button stretch to full width of its cell */
-  height: 56px; /* Match the height of Angular Material inputs */
-  box-sizing: border-box; /* Include padding and border in the height */
-  display: flex; /* Use flex to center the button content */
-  align-items: center; /* Center button content vertically */
-  justify-content: center; /* Center button content horizontally */
-  margin-bottom: 20px;
+  width: 100%; /* Ensure the button takes up the full width of its container */
+  height: 56px; /* Match the height of the input fields */
+  box-sizing: border-box;
 }
 
+/* Align the button properly within its column */
+.col-md-5,
+.col-md-2 {
+  padding: 0; /* Remove padding to ensure proper alignment */
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Ensure that the button is aligned on the same line as the input fields */
+.form-group {
+  margin-bottom: 0;
+}
+
+input,
+button {
+  height: 56px; /* Match height for both input fields and button */
+  box-sizing: border-box;
+}
+
+/* Job item styles */
 .job-item {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -49,4 +63,40 @@
 
 .job-item p {
   margin: 5px 0;
+}
+
+.job-item button {
+  background-color: #3f72af; /* Custom button color */
+  color: white; /* Button text color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  /* Stack the inputs and button on smaller screens */
+  .row {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .col-md-5,
+  .col-md-2 {
+    width: 100%; /* Make columns full width */
+    padding: 0; /* Remove padding */
+  }
+
+  .col-md-2 {
+    margin-top: 10px; /* Add margin on top for spacing */
+  }
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 992px) {
+  .job-item {
+    flex-direction: row; /* Return to row layout for job items on larger screens */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .job-item button {
+    margin-top: 0; /* Remove margin when items are aligned in a row */
+  }
 }

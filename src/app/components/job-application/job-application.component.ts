@@ -46,7 +46,8 @@ export class JobApplicationComponent implements OnInit {
     phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
     email: ['', [Validators.required, Validators.email]],
     coverLetter: ['', Validators.required],
-    jobId: ['', Validators.required]
+    jobId: ['', Validators.required],
+    dataProcessing: ['', Validators.requiredTrue]
   });
   onFileChange(event: any) {
     const file = event.target.files[0];
@@ -125,7 +126,8 @@ export class JobApplicationComponent implements OnInit {
       'phoneNumber',
       'email',
       'resume',
-      'coverLetter'
+      'coverLetter',
+      'dataProcessing'
     ]; // Order of controls
     const controlLabels: { [key: string]: string } = {
       fullName: 'Full Name',
@@ -138,7 +140,8 @@ export class JobApplicationComponent implements OnInit {
       phoneNumber: 'Phone Number',
       email: 'Email',
       resume: 'Resume',
-      coverLetter: 'Cover Letter'
+      coverLetter: 'Cover Letter',
+      dataProcessing: 'Data Processing Agreement'
     };
     for (const name of controlOrder) {
       const control = this.submitForm.get(name);
